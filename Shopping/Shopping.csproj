@@ -48,6 +48,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -246,6 +249,7 @@
     <Content Include="Areas\AdministratorCP\Views\Products\Details.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Products\Edit.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Products\Index.cshtml" />
+    <Content Include="Areas\AdministratorCP\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -323,7 +327,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdministratorCP\Models\" />
-    <Folder Include="Areas\AdministratorCP\Views\Shared\" />
     <Folder Include="ImageUpload\" />
   </ItemGroup>
   <ItemGroup>

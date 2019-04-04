@@ -24,6 +24,37 @@ namespace Shopping.Controllers
             return View(products.ToList());
         }
 
+        // GET: Products
+     /*   public ActionResult Index(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 12)
+        {
+            int Number_Of_Page = (Page_No ?? 1);
+
+            // Kiểm tra chuỗi tìm kiếm
+            if (String.IsNullOrEmpty(SreachString))
+            {
+                SreachString = "";
+            }
+            ViewBag.ChuoiTimKiem = SreachString;
+            var products = db.Products.Include(p => p.category).Where(p => p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(products);
+        }
+
+        public ActionResult TimKiem(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 10)
+        {
+            int Number_Of_Page = (Page_No ?? 1);
+
+            // Kiểm tra chuỗi tìm kiếm
+            if (String.IsNullOrEmpty(SreachString))
+            {
+                SreachString = "";
+            }
+            ViewBag.cateID = cateID;
+            ViewBag.ChuoiTimKiem = SreachString;
+            var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID && p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(products);
+        }*/
+
+
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +69,13 @@ namespace Shopping.Controllers
             }
             return View(products);
         }
+
+        public ActionResult Menu()
+        {
+            var categories = db.Categories.ToList();
+            return PartialView(categories);
+        }
+
 
 
     }
