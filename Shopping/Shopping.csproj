@@ -186,6 +186,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Areas\AdministratorCP\Controllers\ThongKeSanPhamController.cs" />
     <Compile Include="DAO\DbShoppingContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -206,6 +207,18 @@
     <Compile Include="Migrations\201904051434509_update cartitem.Designer.cs">
       <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904051535534_update 3 cartitem.cs" />
+    <Compile Include="Migrations\201904051535534_update 3 cartitem.Designer.cs">
+      <DependentUpon>201904051535534_update 3 cartitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904051537426_update 4 cartitem.cs" />
+    <Compile Include="Migrations\201904051537426_update 4 cartitem.Designer.cs">
+      <DependentUpon>201904051537426_update 4 cartitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904051545030_create 2 spthongke.cs" />
+    <Compile Include="Migrations\201904051545030_create 2 spthongke.Designer.cs">
+      <DependentUpon>201904051545030_create 2 spthongke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -213,6 +226,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Areas\AdministratorCP\Models\SPThongKe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -260,6 +274,7 @@
     <Content Include="Areas\AdministratorCP\Views\Products\Edit.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Products\Index.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AdministratorCP\Views\ThongKeSanPham\ThongKeSanPham.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -337,8 +352,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\AdministratorCP\Models\" />
     <Folder Include="ImageUpload\" />
+    <Folder Include="Views\ThongKeSanPham\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -363,6 +378,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904051434509_update cartitem.resx">
       <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051535534_update 3 cartitem.resx">
+      <DependentUpon>201904051535534_update 3 cartitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051537426_update 4 cartitem.resx">
+      <DependentUpon>201904051537426_update 4 cartitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051545030_create 2 spthongke.resx">
+      <DependentUpon>201904051545030_create 2 spthongke.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

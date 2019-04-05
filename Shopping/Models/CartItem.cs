@@ -25,6 +25,6 @@ namespace Shopping.Models
             this.quantity = quantity;
         }
 
-        public double totalprice { get => product.price * quantity; }
+        public double totalprice { get { return product.price * quantity; } }
     }
 }
