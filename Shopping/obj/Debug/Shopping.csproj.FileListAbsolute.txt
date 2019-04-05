@@ -224,3 +224,5 @@ C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\obj\Debug\Shopping.dll
 C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\obj\Debug\Shopping.pdb
 C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\bin\PagedList.dll
 C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\bin\PagedList.xml
+C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\obj\Debug\Shopping.Migrations.createcartitem.resources
+C:\Users\Beep\Source\Repos\Shoping_cosmetics\Shopping\obj\Debug\Shopping.Migrations.updatecartitem.resources

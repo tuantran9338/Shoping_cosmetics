@@ -185,6 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="DAO\DbShoppingContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,8 +198,17 @@
     <Compile Include="Migrations\201903121014279_phienban1_TaoBang_Products.Designer.cs">
       <DependentUpon>201903121014279_phienban1_TaoBang_Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904051427478_create cartitem.cs" />
+    <Compile Include="Migrations\201904051427478_create cartitem.Designer.cs">
+      <DependentUpon>201904051427478_create cartitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904051434509_update cartitem.cs" />
+    <Compile Include="Migrations\201904051434509_update cartitem.Designer.cs">
+      <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -323,6 +333,7 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -346,6 +357,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903121014279_phienban1_TaoBang_Products.resx">
       <DependentUpon>201903121014279_phienban1_TaoBang_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051427478_create cartitem.resx">
+      <DependentUpon>201904051427478_create cartitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051434509_update cartitem.resx">
+      <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

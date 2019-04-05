@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Shopping.Models.Products>
+@using PagedList;
 
 @{
     ViewBag.Title = "Index";
@@ -6,7 +7,12 @@
 }
 
 <h2>Index</h2>
-
+@using (Html.BeginForm())
+{
+    <p>
+        Title: @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+    </p>
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -36,7 +42,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.category.name)
@@ -60,11 +67,18 @@
             @Html.DisplayFor(modelItem => item.valid)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Add to Cart", "Order", "ShoppingCart", new { id = item.id, quantity =1 }, null) |
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
         </td>
     </tr>
-}
+    }
 
 </table>
+<p>
+    @Html.ActionLink("Trang trước", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber - 1 }) |
+    Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |
+    @Html.ActionLink("Trang sau", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber + 1 })
+
+</p>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using Shopping.DAO;
 using Shopping.Models;
 using EntityState = System.Data.Entity.EntityState;
@@ -17,15 +18,8 @@ namespace Shopping.Controllers
 
         private DbShoppingContext db = new DbShoppingContext();
 
-        public ActionResult Index(int? Page_No, int Size_Of_Page = 5 )
-        {
-            int Number_Of_Page = (Page_No ?? 1);
-            var products = db.Products.Include(p => p.category).OrderBy(p =>p.id);
-            return View(products.ToList());
-        }
-
         // GET: Products
-     /*   public ActionResult Index(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 12)
+        public ActionResult Index(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 12)
         {
             int Number_Of_Page = (Page_No ?? 1);
 
@@ -52,7 +46,7 @@ namespace Shopping.Controllers
             ViewBag.ChuoiTimKiem = SreachString;
             var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID && p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
             return View(products);
-        }*/
+        }
 
 
         // GET: Products/Details/5
