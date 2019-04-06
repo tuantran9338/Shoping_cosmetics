@@ -180,13 +180,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AdministratorCP\AdministratorCPAreaRegistration.cs" />
+    <Compile Include="Areas\AdministratorCP\Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Areas\AdministratorCP\Controllers\ThongKeSanPhamController.cs" />
     <Compile Include="DAO\DbShoppingContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,8 +253,7 @@
     <Content Include="Areas\AdministratorCP\Views\Products\Details.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Products\Edit.cshtml" />
     <Content Include="Areas\AdministratorCP\Views\Products\Index.cshtml" />
-    <Content Include="Areas\AdministratorCP\Views\ThongKeSanPham\ThongKeSanPham.cshtml" />
-    <Content Include="Areas\AdministratorCP\Views\ThongKeSanPham\Index.cshtml" />
+    <Content Include="Areas\AdministratorCP\Views\ThongKe\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Shopping.Models.SPThongKe>
+
+@{
+    ViewBag.Title = "Thống kê";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TRANG THỐNG KÊ TỔNG HỢP</h2>
+<button id="btThongkesanpham" class="btn btn-danger">THỐNG KÊ THEO SẢN PHẨM</button>
+<button id="btThongkedanhmuc" class="btn btn-danger">THỐNG KÊ THEO DANH MỤC</button>
+<hr />
+<div id="hienthitable">
+
+</div>
+
+<table class="columns">
+    <tr>
+        <td><div id="hienthibieudoPIE" style="border: 1px solid #ccc"></div></td>
+        <td><div id="hienthibieudoLINE" style="border: 1px solid #ccc"></div></td>
+    </tr>
+</table>
+
+@section scripts{
+    <!-- Thư viện google chart dùng để vẽ biểu đồ-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Khi trang load xong resourecs-->
+    <script>
+        $(document).ready(function () {
+            $("#btThongkesanpham").click(function () {
+                //Load google charts: khởi tảo google chart
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawThongKeSanPham);
+            });
+            //Hiển thị bảng dữ liệu và vẽ biểu đồ bằng Ajax
+            function drawThongKeSanPham() {
+                // Gọi Ajax về sever lấy dữ liệu
+                $.ajax({
+                    url: "/ThongKe/JsonThongKeSanPham",
+                    //data: JSON.stringify(dto), //nếu có dữ liệu gửi về sever
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    as: true,
+                    success: function (result) {
+                        // Hiện thị bản dữ liệu
+                        var tblContent =
+                            "<table class = 'table'>" +
+                            "<thead>" +
+                            "<tr>" +
+                            "<th>Mã số </th>" +
+                            "<th>Tên sản phẩm</th>" +
+                            "<th>Số lượng</th>" +
+                            "<th>Đơn giá</th>" +
+                            "</tr>" +
+                            "</thead>" +
+                            "<tbody>";
+                        var tblData = "";
+                        $.each(result, function (i, item) {
+                            tblData = tblData + "<tr>" +
+                                "<td>" + item.id + "</td>" > +
+                                "<td>" + item.name + "</td>" > +
+                                "<td>" + item.quantity + "</td>" > +
+                                "<td>" + item.price + "</td>" > +
+                                "</tr>";
+                        });
+
+                        tblContent = tblContent + tblData + "</tbody>" + "</table>";
+
+                        $('#hienthitable').append(tblContent); //kết thúc phần hiện thị bảng dự liệu
+
+                        // Hiển thị biểu đồ
+                        // Phần nạp dữ liệu để hiển thị
+                        var tensanphams = [];
+                        var soluongSanphams = [];
+                        var giaSanPhams = [];
+
+                        $.each(result, function (i, item) {
+                            tensanphams.push([item.name].toString());
+                            soluongSanphams.push([item.quantity]);
+                            giaSanPhams.push([item.price]);
+                        });
+
+                        //Vẽ biểu đồ dạng PIE - Thống kê số lượng
+
+                        //Khởi tạo và nạp dữ liệu cho biểu đồ
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'Sản Phẩm');
+                        data.addColumn('number', "Số lượng");
+                        data.addRows(tensanphams.length);
+
+                        for (var i = 0; i < tensanphams.length; i++) {
+                            data.setCell(i, 0, tensanphams[i]);
+                            data.setCell(i, 1, parseInt(soluongSanphams[i]));
+                        }
+
+                        // Cấu hình cơ bản cho biểu đồ
+                        var options = {
+                            title: 'Thống kê thông tin sản phẩm',
+                            is3D: true,
+                            width: 550,
+                            height: 400
+                        };
+
+                        // Vẽ biểu đồ thống kê theo số lượng
+                        var chart = new google.visualization.PieChart(document.getElementById('hienthibieudoPIE'));
+                        chart.draw(data, options);
+
+                        //Vẽ biểu đồ dang Column - thống kê theo đơn giá
+
+                        // Khởi tạo và nạp dữ liệu cho biểu đồ
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'Sản Phẩm');
+                        data.addColumn('number', "Số lượng");
+                        data.addRows(tensanphams.length);
+
+                        for (var i = 0; i < tensanphams.length; i++) {
+                            data.setCell(i, 0, tensanphams[i]);
+                            data.setCell(i, 1, parseInt(soluongSanphams[i]));
+                        }
+                        // vẽ biểu đồ theo đơn giá
+                        var chart = new google.visualization.LineChart(document.getElementById('hienthibieudoLINE'));
+                        chart.draw(data, options);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+        });
+    </script>
+}
+
