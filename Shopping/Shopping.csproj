@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AdministratorCP\AdministratorCPAreaRegistration.cs" />
+    <Compile Include="Areas\AdministratorCP\Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -330,9 +331,12 @@
     <Content Include="Views\ShoppingCart\Order.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\ProductItem.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\AdministratorCP\Views\ThongKe\" />
     <Folder Include="ImageUpload\" />
     <Folder Include="Views\ThongKeSanPham\" />
   </ItemGroup>

@@ -1,0 +1,29 @@
+﻿@model Shopping.Models.Products
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.category.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.desrition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.thumbnail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.valid)
+        </td>
+        <td>
+            @Html.ActionLink("Add to Cart", "Order", "ShoppingCart", new { id = Model.id, quantity = 1 }, null) |
+            @Html.ActionLink("Details", "Details", new { id = Model.id })
+        </td>
+    </tr>

@@ -19,7 +19,7 @@ namespace Shopping.Controllers
         private DbShoppingContext db = new DbShoppingContext();
 
         // GET: Products
-        public ActionResult Index(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 12)
+        public ActionResult Index(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 5)
         {
             int Number_Of_Page = (Page_No ?? 1);
 
@@ -63,7 +63,7 @@ namespace Shopping.Controllers
             }
             return View(products);
         }
-
+        [ChildActionOnly]
         public ActionResult Menu()
         {
             var categories = db.Categories.ToList();
