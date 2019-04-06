@@ -24,5 +24,22 @@ namespace Shopping.Areas.AdministratorCP.Controllers
             return View(result);
         }
 
+        [HttpGet]
+        public JsonResult JsonThongKeSanPham()
+        {
+            var products = db.Products.ToList();
+            var result = new List<SPThongKe>();
+            foreach (var item in products)
+            {
+                result.Add(new SPThongKe { id = item.id, name = item.name, quantity = item.amount, price = item.price });
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
     }
 }
