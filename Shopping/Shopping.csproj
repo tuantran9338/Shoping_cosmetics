@@ -199,26 +199,6 @@
     <Compile Include="Migrations\201903121014279_phienban1_TaoBang_Products.Designer.cs">
       <DependentUpon>201903121014279_phienban1_TaoBang_Products.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904051427478_create cartitem.cs" />
-    <Compile Include="Migrations\201904051427478_create cartitem.Designer.cs">
-      <DependentUpon>201904051427478_create cartitem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904051434509_update cartitem.cs" />
-    <Compile Include="Migrations\201904051434509_update cartitem.Designer.cs">
-      <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904051535534_update 3 cartitem.cs" />
-    <Compile Include="Migrations\201904051535534_update 3 cartitem.Designer.cs">
-      <DependentUpon>201904051535534_update 3 cartitem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904051537426_update 4 cartitem.cs" />
-    <Compile Include="Migrations\201904051537426_update 4 cartitem.Designer.cs">
-      <DependentUpon>201904051537426_update 4 cartitem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904051545030_create 2 spthongke.cs" />
-    <Compile Include="Migrations\201904051545030_create 2 spthongke.Designer.cs">
-      <DependentUpon>201904051545030_create 2 spthongke.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -347,8 +327,8 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Order.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,21 +352,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903121014279_phienban1_TaoBang_Products.resx">
       <DependentUpon>201903121014279_phienban1_TaoBang_Products.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051427478_create cartitem.resx">
-      <DependentUpon>201904051427478_create cartitem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051434509_update cartitem.resx">
-      <DependentUpon>201904051434509_update cartitem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051535534_update 3 cartitem.resx">
-      <DependentUpon>201904051535534_update 3 cartitem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051537426_update 4 cartitem.resx">
-      <DependentUpon>201904051537426_update 4 cartitem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051545030_create 2 spthongke.resx">
-      <DependentUpon>201904051545030_create 2 spthongke.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

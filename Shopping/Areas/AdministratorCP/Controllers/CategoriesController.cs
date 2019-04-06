@@ -12,6 +12,7 @@ using EntityState = System.Data.Entity.EntityState;
 
 namespace Shopping.Areas.AdministratorCP.Controllers
 {
+    [Authorize(Roles = "MANAGER, ADMIN")]
     public class CategoriesController : Controller
     {
         private DbShoppingContext db = new DbShoppingContext();
@@ -91,6 +92,7 @@ namespace Shopping.Areas.AdministratorCP.Controllers
             return View(category);
         }
 
+        [Authorize(Roles = "ADMIN")]
         // GET: Categories/Delete/5
         public ActionResult Delete(int? id)
         {

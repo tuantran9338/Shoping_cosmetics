@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Shopping.Areas.AdministratorCP.Controllers
 {
+    [Authorize(Roles = "MANAGER, ADMIN")]
     public class ThongKeSanPhamController : Controller
     {
         private DbShoppingContext db = new DbShoppingContext();

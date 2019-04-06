@@ -19,7 +19,7 @@ namespace Shopping.Models
 
         }
 
-        public CartItem(Products products, int quantity)
+        public CartItem(Products product, int quantity)
         {
             this.product = product;
             this.quantity = quantity;

@@ -8,6 +8,7 @@ using Shopping.Models;
 
 namespace Shopping.Areas.AdministratorCP.Controllers
 {
+    [Authorize(Roles = "MANAGER, ADMIN")]
     public class ProductsController : Controller
     {
         private DbShoppingContext db = new DbShoppingContext();
@@ -112,7 +113,7 @@ namespace Shopping.Areas.AdministratorCP.Controllers
             return View(product);
         }
 
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Products/Delete/5
         public ActionResult Delete(int? id)
         {
