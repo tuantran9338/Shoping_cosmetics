@@ -1,26 +1,26 @@
 ﻿@model IEnumerable<Shopping.Models.SPThongKe>
 
-@{
+    @{
     ViewBag.Title = "Thống kê";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    }
 
-<h2>TRANG THỐNG KÊ TỔNG HỢP</h2>
-<button id="btThongkesanpham" class="btn btn-danger">THỐNG KÊ THEO SẢN PHẨM</button>
-<button id="btThongkedanhmuc" class="btn btn-danger">THỐNG KÊ THEO DANH MỤC</button>
-<hr />
-<div id="hienthitable">
+    <h2>TRANG THỐNG KÊ TỔNG HỢP</h2>
+    <button id="btThongkesanpham" class="btn btn-danger">THỐNG KÊ THEO SẢN PHẨM</button>
+    <button id="btThongkedanhmuc" class="btn btn-danger">THỐNG KÊ THEO DANH MỤC</button>
+    <hr />
+    <div id="hienthitable">
 
-</div>
+    </div>
 
-<table class="columns">
-    <tr>
-        <td><div id="hienthibieudoPIE" style="border: 1px solid #ccc"></div></td>
-        <td><div id="hienthibieudoLINE" style="border: 1px solid #ccc"></div></td>
-    </tr>
-</table>
+    <table class="columns">
+        <tr>
+            <td><div id="hienthibieudoPIE" style="border: 1px solid #ccc"></div></td>
+            <td><div id="hienthibieudoLINE" style="border: 1px solid #ccc"></div></td>
+        </tr>
+    </table>
 
-@section scripts{
+    @section scripts{
     <!-- Thư viện google chart dùng để vẽ biểu đồ-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Khi trang load xong resourecs-->
@@ -57,10 +57,10 @@
                         var tblData = "";
                         $.each(result, function (i, item) {
                             tblData = tblData + "<tr>" +
-                                "<td>" + item.id + "</td>" > +
-                                "<td>" + item.name + "</td>" > +
-                                "<td>" + item.quantity + "</td>" > +
-                                "<td>" + item.price + "</td>" > +
+                                "<td>" + item.id + "</td>"  +
+                                "<td>" + item.name + "</td>" +
+                                "<td>" + item.quantity + "</td>" +
+                                "<td>" + item.price + "</td>" +
                                 "</tr>";
                         });
 
@@ -128,5 +128,5 @@
             }
         });
     </script>
-}
+    }
 
