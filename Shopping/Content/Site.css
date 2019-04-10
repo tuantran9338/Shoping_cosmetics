@@ -22,3 +22,31 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#nav_dangnhap {
+    padding: 8px;
+}
+
+#nav_dangnhap .nav-item {
+    width: 70px;
+}
+
+.dropdown {
+    padding: 8px;
+}
+
+.dropdown .dropdown-toggle {
+    color: white;
+}
+
+.dropdown ul {
+    background: #343a40;
+}
+
+.dropdown ul  a{
+    color: white;
+}
+
+.card-body{
+    color: black;
+}

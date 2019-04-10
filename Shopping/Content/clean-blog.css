@@ -341,7 +341,7 @@ header.masthead .post-heading .meta a {
   position: relative;
   z-index: 0;
   top: 2em;
-  display: block;
+  display: inline-block;
   margin: 0;
   -webkit-transition: top 0.3s ease, opacity 0.3s ease;
   transition: top 0.3s ease, opacity 0.3s ease;

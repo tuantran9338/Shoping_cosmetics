@@ -6,47 +6,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.category.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.desrition)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.thumbnail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.valid)
-        </th>
-        <th></th>
-    </tr>
+<div class="container">
+    <div class="row text-center">
+        @foreach (var item in Model)
+        {
+            @Html.Partial("ProductItem", item)
+        }
+    </div>     
+    <p>
+        @Html.ActionLink("Trang trước", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber - 1 }) |
+        Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |
+        @Html.ActionLink("Trang sau", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber + 1 })
 
-    @foreach (var item in Model)
-    {
-        @Html.Partial("ProductItem", item)
-    }
-
-</table>
-
-<p>
-    @Html.ActionLink("Trang trước", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber - 1 }) |
-    Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |
-    @Html.ActionLink("Trang sau", "Index", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber + 1 })
-
-</p>
+    </p>
+    </div>

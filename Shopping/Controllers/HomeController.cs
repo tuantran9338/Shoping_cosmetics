@@ -33,7 +33,7 @@ namespace Shopping.Controllers
             return View(products);
         }
 
-        public ActionResult TimKiem(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 10)
+        public ActionResult TimKiem(string SreachString, int? cateID, int? Page_No, int Size_Of_Page = 5)
         {
             int Number_Of_Page = (Page_No ?? 1);
 
@@ -42,9 +42,9 @@ namespace Shopping.Controllers
             {
                 SreachString = "";
             }
-            ViewBag.cateID = cateID;
+            ViewBag.cateId = cateID;
             ViewBag.ChuoiTimKiem = SreachString;
-            var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID && p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
+            var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID || p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
             return View(products);
         }
 

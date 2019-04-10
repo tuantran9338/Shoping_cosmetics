@@ -26,10 +26,12 @@ namespace Shopping
                       "~/Scripts/clean-blog.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/site.css",
                       "~/Content/bootstrap.css",
-                      "~/Content/bootstrap.min.css",
                       "~/Content/clean-blog.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css"));
+
+
         }
     }
 }
