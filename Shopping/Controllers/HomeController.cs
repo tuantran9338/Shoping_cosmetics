@@ -70,6 +70,11 @@ namespace Shopping.Controllers
             return PartialView(categories);
         }
 
+        [Authorize(Roles = "MEMBER")]
+        public ActionResult Thanhtoan()
+        {
+            return View();
+        }
 
 
     }

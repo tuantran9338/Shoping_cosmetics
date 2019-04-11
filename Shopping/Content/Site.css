@@ -50,3 +50,7 @@ textarea {
 .card-body{
     color: black;
 }
+#atc {
+    position: absolute;
+    right: 30px
+}
