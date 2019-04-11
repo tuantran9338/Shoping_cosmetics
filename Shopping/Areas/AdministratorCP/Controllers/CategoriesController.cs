@@ -12,7 +12,7 @@ using EntityState = System.Data.Entity.EntityState;
 
 namespace Shopping.Areas.AdministratorCP.Controllers
 {
-    //11
+    //112
     [Authorize(Roles = "MANAGER, ADMIN")]
     public class CategoriesController : Controller
     {
