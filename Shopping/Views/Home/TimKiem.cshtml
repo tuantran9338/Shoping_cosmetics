@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Shopping.Models.Products>
+@using PagedList;
+
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row text-center">
+        @foreach (var item in Model)
+        {
+            @Html.Partial("ProductItem", item)
+        }
+    </div>
+    <p>
+        @Html.ActionLink("Trang trước", "Timkiem", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber - 1 }) |
+        Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |
+        @Html.ActionLink("Trang sau", "Timkiem", new { SreachString = ViewBag.ChuoiTimKiem, Page_No = ((IPagedList)Model).PageNumber + 1 })
+
+    </p>
+</div>

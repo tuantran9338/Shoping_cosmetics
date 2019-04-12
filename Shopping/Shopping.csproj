@@ -219,9 +219,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\clean-blog.css" />
     <Content Include="Content\clean-blog.min.css" />
+    <Content Include="Content\materialdesignicons.css" />
+    <Content Include="Content\materialdesignicons.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ImageUpload\banner_2.jpg" />
     <Content Include="ImageUpload\home-bg.jpg" />
     <Content Include="ImageUpload\mypham-banner.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -330,6 +333,7 @@
     <Content Include="Views\Home\ProductItem.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Home\Thanhtoan.cshtml" />
+    <Content Include="Views\Home\TimKiem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

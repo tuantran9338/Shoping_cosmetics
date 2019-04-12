@@ -29,7 +29,9 @@ namespace Shopping
                       "~/Content/site.css",
                       "~/Content/bootstrap.css",
                       "~/Content/clean-blog.min.css",
-                      "~/Content/bootstrap.min.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/materialdesignicons.css",
+                      "~/Content/materialdesignicons.min.css"));
 
 
         }

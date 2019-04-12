@@ -44,7 +44,7 @@ namespace Shopping.Controllers
             }
             ViewBag.cateId = cateID;
             ViewBag.ChuoiTimKiem = SreachString;
-            var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID || p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
+            var products = db.Products.Include(p => p.category).Where(p => p.cateId == cateID && p.name.Contains(SreachString)).OrderBy(p => p.id).ToPagedList(Number_Of_Page, Size_Of_Page);
             return View(products);
         }
 
